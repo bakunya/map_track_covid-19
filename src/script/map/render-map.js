@@ -2,6 +2,7 @@ import "es6-promise/dist/es6-promise.min.js";
 import "es6-promise/dist/es6-promise.auto.min.js";
 import "mapbox-gl/dist/mapbox-gl.css";
 import mapboxgl from "mapbox-gl/dist/mapbox-gl.js";
+import token from "./config"
 
 const map = () => {
   fetch("https://corona.lmao.ninja/v2/jhucsse")
@@ -17,8 +18,6 @@ const map = () => {
 };
 
 const renderMap = (response) => {
-  //TODO:: masukan token mapbox disini
-  const token = "";
   mapboxgl.accessToken = token;
   const map = new mapboxgl.Map({
     container: "map",

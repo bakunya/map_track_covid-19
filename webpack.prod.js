@@ -11,10 +11,22 @@ module.exports = merge(common, {
         use: [
           {
             loader: "babel-loader",
-            options: { presets: ["@babel/preset-env"] },
+            options: { 
+              presets: [
+                [
+                  "@babel/preset-env", 
+                  { targets: {
+                    esmodules: true
+                  } } 
+                ],
+              ] 
+            },
           },
         ],
       },
     ],
   },
 });
+[
+  ['@babel/preset-env', { targets: "defaults" }]
+]
